@@ -4,7 +4,13 @@ import charging from './charging.png';
 export default function BatteryLevel() {
     const [currentBatteryLevel, setCurrentBatteryLevel] = useState(0);
     const [isCharging, setIsCharging] = useState(false);
+useEffect(()=>{
+    setInterval(()=>{
 
+        batteryLevelFinder();
+    },1000)
+    
+})
     const batteryLevelFinder = async () => {
         const BatteryLevel = await navigator.getBattery();
         setCurrentBatteryLevel(Math.floor(BatteryLevel.level * 100));
