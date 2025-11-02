@@ -6,7 +6,6 @@ export default function BatteryLevel() {
     const [isCharging, setIsCharging] = useState(false);
 useEffect(()=>{
     setInterval(()=>{
-
         batteryLevelFinder();
     },1000)
     
@@ -24,20 +23,21 @@ useEffect(()=>{
     return (
         <>
         
+        <center>
         <div
         style={
             {
                 color:currentBatteryLevel>=50?"yellow":"red",
-                fontSize:"60px",
-                marginTop:"60%"
+                fontSize:"60px"
             }
         }>
-            
+            <p>HAI THIS IS MANOJ</p>
             <h1 >{currentBatteryLevel} %</h1>
             {
                 isCharging?<img src={charging} alt="charging" />:''
             }
         </div>
+        </center>
         </>
     )
 }
