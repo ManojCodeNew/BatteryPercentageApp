@@ -1,10 +1,9 @@
 body{
-  background-color: black;
+  background-color: white;
   color: white;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-weight: bolder;
   font-size: larger;
-  margin-top: 10vh;
 }
