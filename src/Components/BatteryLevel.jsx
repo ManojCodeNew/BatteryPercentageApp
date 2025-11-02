@@ -31,7 +31,7 @@ useEffect(()=>{
                 fontSize:"60px"
             }
         }>
-            <p>HAI THIS IS MANOJ</p>
+            <p>HAI THIS IS Likith</p>
             <h1 >{currentBatteryLevel} %</h1>
             {
                 isCharging?<img src={charging} alt="charging" />:''
