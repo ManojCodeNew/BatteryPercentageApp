@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './BatteryLevel.css'
 
 export default function PidmiCalculate() {
+    const [clicked, setClicked] = useState(false);
+
     // Pidmi Start Date
     const pidmiStartDate = "2/12/2024";
     const currentCalculationDate = "2025-10-29";
@@ -16,15 +18,33 @@ export default function PidmiCalculate() {
     let totalAmount = 56700;
     totalAmount = totalAmount + (daysPassed * 200);
 
+    const handleClick = () => {
+        setClicked(!clicked);
+    }
+
     return (
-        <div className="pidmi-container">
-            <h2>PIDMI Total Amount</h2>
-            <div className="date-container">
-                <div className="startDate">{pidmiStartDate}</div>
-                <span className='to'>-</span>
-                <div className="todayDate">{todaysDate.toLocaleDateString()}</div>
-            </div>
-            <h1>₹ {totalAmount}</h1>
-        </div>
+        <>
+            <button className='click-btn' onClick={
+                handleClick
+            }>
+                Click
+            </button>
+
+            {clicked ?
+
+                    <div className="pidmi-container">
+
+
+                        <h2>PIDMI Total Amount</h2>
+                        <div className="date-container">
+                            <div className="startDate">{pidmiStartDate}</div>
+                            <span className='to'>-</span>
+                            <div className="todayDate">{todaysDate.toLocaleDateString()}</div>
+                        </div>
+                        <h1>₹ {totalAmount}</h1>
+                    </div>
+                    : ''}
+        </>
+
     )
 }
